@@ -7,6 +7,6 @@ COPY package.json .
 RUN npm install
 
 COPY index.js .
-COPY sum.test.js .
+COPY main.js .
 
-CMD ["npm", "test"]
+CMD ["node", "main.js"]
