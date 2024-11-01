@@ -1,12 +1,12 @@
 pipeline {
-    agent {
-        docker { image 'node:23-alpine3.19' }
-    }
+    agent any
     stages {
-        stage('Test') {
+        stage('Docker') {
             steps {
-                sh 'npm install'
-                sh 'npm test'
+                script {
+                    //cualquier sh que vean, en windows es bat
+                    sh 'docker build -t imagendepruebas -f Dockerfile.test . && docker run imagendepruebas'
+                }
             }
         }
     }
