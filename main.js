@@ -1,3 +1,3 @@
 const sum = require('./index');
 
-console.log(sum(2, 2));
+console.log(sum(3, 2));
